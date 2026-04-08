@@ -1,0 +1,55 @@
+# --- Zephyr / CMake Build Artifacts ---
+build/
+bin/
+out/
+*.obj
+*.o
+*.elf
+*.hex
+*.bin
+*.uf2
+*.lst
+*.map
+*.stat
+*.wrn
+.config
+.config.old
+.cache/
+
+# --- West / Zephyr Internal ---
+.west/
+zephyr/
+modules/
+bootloader/
+tools/
+# Note: If you want to track your 'zephyr' folder because you modified it,
+# remove it from here. Usually, west manages these.
+
+# --- Nix / NixOS Specific ---
+.direnv/
+result
+result-*
+.envrc
+
+# --- Python / Tooling ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+.venv/
+
+# --- Editor / OS ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+atlassian-ide-plugin.xml
+
+# --- KiCad (If designing hardware in this repo) ---
+*-backups/
+_autosave-*
+*.kicad_pcb-bak
+*.sch-bak
+fp-info-cache

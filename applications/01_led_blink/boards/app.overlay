@@ -1,0 +1,34 @@
+#include <zephyr/dt-bindings/pinctrl/rpi-pico-rp2040-pinctrl.h>
+
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart0;
+        zephyr,shell-uart = &cdc_acm_uart0;
+    };
+};
+
+&zephyr_udc0 {
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
+
+&spi0 {
+    status = "okay";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-names = "default";
+};
+
+&pinctrl {
+    spi0_default: spi0_default {
+        group1 {
+            /*
+             * Format: RP2XXX_PINMUX(pin, function)
+             * Function 1 is SPI for RP2040
+             */
+            pinmux = <RP2XXX_PINMUX(0, 1)>, /* TX / MOSI */
+                     <RP2XXX_PINMUX(2, 1)>, /* SCK */
+                     <RP2XXX_PINMUX(3, 1)>; /* RX / MISO */
+        };
+    };
+};
