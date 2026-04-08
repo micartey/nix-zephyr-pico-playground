@@ -41,11 +41,11 @@
               ]
             ))
 
-            # Flashing/Terminal Tools
-            picotool
-            openocd
-            screen
-            tio
+            picotool # Flashing/Terminal Tools
+            openocd # Debug tool
+            tio # tty monitor
+
+            just
           ];
 
           shellHook = ''
@@ -61,6 +61,8 @@
                 echo "ZEPHYR_BASE set to $ZEPHYR_BASE"
               fi
             fi
+
+            just clangd
           '';
         };
       }

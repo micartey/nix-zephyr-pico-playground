@@ -10,6 +10,10 @@ build-03: cleanup
     nix develop -c west build -p always -b rpi_pico applications/03_button_driver/ -- \
         -DDTC_OVERLAY_FILE=$PWD/applications/03_button_driver/boards/rpi_pico.overlay
 
+build-04: cleanup
+    west build -p always -b rpi_pico applications/04_memory_arena -- \
+        -DDTC_OVERLAY_FILE=$PWD/applications/04_memory_arena/boards/app.overlay
+
 cleanup:
     rm -rf build
 
@@ -23,3 +27,6 @@ test: test-unit test-integration
 
 flash:
     nix develop --command sudo picotool load -x build/zephyr/zephyr.uf2
+
+clangd:
+    python3 scripts/generate_clangd.py

@@ -1,3 +1,0 @@
-CompileFlags:
-  Add: [-I/home/daniel/Workspace/zephyr_pico/zephyr/include]
-  CompilationDatabase: .
