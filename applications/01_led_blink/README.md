@@ -38,6 +38,18 @@ while (true) {
 }
 ```
 
+## Testing
+
+Zephyr offers a test framework.
+
+```bash
+# Run unit tests
+west build -p always -b native_sim/native/64 applications/01_led_blink/tests/unit && ./build/zephyr/zephyr.exe
+
+# Run integration tests
+west build -p always -b native_sim/native/64 applications/01_led_blink/tests/integration && ./build/zephyr/zephyr.exe
+```
+
 ## Troubleshooting
 
 ```bash

@@ -4,6 +4,7 @@
 #include "zephyr/sys/printk.h"
 
 #include "bootloader_cmd.h"
+#include "blink.hpp"
 
 static int cmd_hello(const struct shell *sh, int argc, char **argv) {
   printk("World!\n");
@@ -27,15 +28,16 @@ SHELL_CMD_REGISTER(hello, &sub_demo, "Print \"World!\"", cmd_hello);
 int main(void) {
   const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
 
-  if (!gpio_is_ready_dt(&led)) {
+  if (blink_setup(led) != 0) {
     return -1;
   }
 
-  gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE);
+  static struct k_timer blink_timer;
+
+  blink_timer_start(led, &blink_timer, K_SECONDS(1), K_SECONDS(1));
 
   while (true) {
-    gpio_pin_toggle_dt(&led);
-    k_msleep(1000);
+    k_sleep(K_FOREVER);
   }
 
   return 0;
