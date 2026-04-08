@@ -1,0 +1,6 @@
+config RP2040_BOOTLOADER
+    bool "RP2040 USB Bootloader shell command"
+    default y
+    depends on SHELL && DEVICE_SHELL && UART_INTERRUPT_DRIVEN
+    help
+      Enables the bootloader shell command to reboot the RP2040 into BOOTSEL mode.

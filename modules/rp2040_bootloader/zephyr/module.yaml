@@ -1,0 +1,4 @@
+name: rp2040_bootloader
+build:
+  cmake: .
+  kconfig: Kconfig

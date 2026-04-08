@@ -19,7 +19,7 @@ out/
 # --- West / Zephyr Internal ---
 .west/
 zephyr/
-modules/
+# modules/
 bootloader/
 tools/
 # Note: If you want to track your 'zephyr' folder because you modified it,

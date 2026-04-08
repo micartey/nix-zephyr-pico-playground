@@ -1,5 +1,9 @@
 # zephyr pico
 
+<div align="center">
+    <img src="https://waka.micartey.dev/api/badge/micartey/interval:year/project:zephyr_pico" />
+</div>
+
 https://docs.zephyrproject.org/latest/introduction/index.html
 
 1. Figure out why zephyr may be used

@@ -1,9 +1,9 @@
-# hello world example
+# LED Blink example
 
 Inside of the nix develop shell, run:
 
 ```bash
-west build -p always -b rpi_pico applications/01_hello_world -- -DDTC_OVERLAY_FILE=boards/app.overlay
+west build -p always -b rpi_pico applications/01_led_blink -- -DDTC_OVERLAY_FILE=applications/01_led_blink/boards/app.overlay
 
 # To flash the device
 sudo picotool load -x build/zephyr/zephyr.uf2

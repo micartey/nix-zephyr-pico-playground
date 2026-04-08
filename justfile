@@ -1,5 +1,5 @@
 build: cleanup
-    nix develop -c west build -p always -b rpi_pico applications/01_hello_world -- -DDTC_OVERLAY_FILE=boards/app.overlay
+    nix develop -c west build -p always -b rpi_pico applications/01_led_blink -- -DDTC_OVERLAY_FILE=$PWD/applications/01_led_blink/boards/app.overlay
 
 build-example:
     nix develop -c west build -b rpi_pico zephyr/samples/basic/blinky -- -DCONFIG_NEWLIB_LIBC=y
