@@ -40,5 +40,6 @@ int main(void) {
     k_sleep(K_FOREVER);
   }
 
+  (void)cmd_bootloader;
   return 0;
 }
