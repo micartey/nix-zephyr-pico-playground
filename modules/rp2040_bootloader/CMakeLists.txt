@@ -4,4 +4,6 @@ if(CONFIG_RP2040_BOOTLOADER)
 
   zephyr_library_sources(src/bootloader_cmd.c)
 
+  zephyr_include_directories(include)
+
 endif()

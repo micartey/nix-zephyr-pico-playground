@@ -1,0 +1,10 @@
+description: Custom button
+
+# Needs to macht: DT_DRV_COMPAT custom_button
+compatible: "custom,button"
+
+# Define required ndoes properties
+properties:
+  gpios:
+    type: phandle-array
+    required: true

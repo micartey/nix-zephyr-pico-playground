@@ -1,0 +1,4 @@
+config CUSTOM_BUTTON
+	bool "Custom Button GPIO driver"
+	help
+	  Enable the custom button GPIO driver for reading button states.

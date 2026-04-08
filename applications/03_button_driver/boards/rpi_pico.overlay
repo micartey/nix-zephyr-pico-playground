@@ -1,0 +1,27 @@
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart0;
+        zephyr,shell-uart = &cdc_acm_uart0;
+    };
+
+    aliases {
+        my-button-1 = &button_1;
+        my-button-2 = &button_2;
+    };
+
+    button_1: button_1 {
+        compatible = "custom,button";
+        gpios = <&gpio0 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+
+    button_2: button_2 {
+        compatible = "custom,button";
+        gpios = <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
+
+&zephyr_udc0 {
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};

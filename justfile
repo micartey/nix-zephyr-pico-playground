@@ -1,8 +1,14 @@
 build: cleanup
-    nix develop -c west build -p always -b rpi_pico applications/01_led_blink -- -DDTC_OVERLAY_FILE=$PWD/applications/01_led_blink/boards/app.overlay
+    west build -p always -b rpi_pico applications/01_led_blink -- \
+        -DDTC_OVERLAY_FILE=$PWD/applications/01_led_blink/boards/app.overlay
 
 build-02: cleanup
-    nix develop -c west build -p always -b rpi_pico applications/02_button/ -- -DDTC_OVERLAY_FILE=$PWD/applications/02_button/boards/button.overlay
+    nix develop -c west build -p always -b rpi_pico applications/02_button/ -- \
+        -DDTC_OVERLAY_FILE=$PWD/applications/02_button/boards/button.overlay
+
+build-03: cleanup
+    nix develop -c west build -p always -b rpi_pico applications/03_button_driver/ -- \
+        -DDTC_OVERLAY_FILE=$PWD/applications/03_button_driver/boards/rpi_pico.overlay
 
 cleanup:
     rm -rf build
