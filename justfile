@@ -1,4 +1,4 @@
-build: cleanup
+build-01: cleanup
     west build -p always -b rpi_pico applications/01_led_blink -- \
         -DDTC_OVERLAY_FILE=$PWD/applications/01_led_blink/boards/app.overlay
 
@@ -28,5 +28,7 @@ test: test-unit test-integration
 flash:
     nix develop --command sudo picotool load -x build/zephyr/zephyr.uf2
 
+# Generate a clangd config that works for nix based systems and enables correct LSP suport
 clangd:
+    ln -s build/compile_commands.json .
     python3 scripts/generate_clangd.py

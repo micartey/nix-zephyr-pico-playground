@@ -15,8 +15,10 @@ out/
 .config
 .config.old
 .cache/
+
 # clangd generated configuration
 .clangd
+compile_commands.json
 
 # --- West / Zephyr Internal ---
 .west/
