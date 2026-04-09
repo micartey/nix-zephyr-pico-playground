@@ -23,6 +23,11 @@ build-05: cleanup
     west build -p always -b rpi_pico applications/05_multi_threading -- \
         -DDTC_OVERLAY_FILE=$PWD/applications/05_multi_threading/boards/app.overlay
 
+# build example 6
+build-06: cleanup
+    west build -p always -b rpi_pico applications/06_mutex -- \
+        -DDTC_OVERLAY_FILE=$PWD/applications/06_mutex/boards/app.overlay
+
 cleanup:
     rm -rf build
 
