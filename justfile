@@ -28,6 +28,15 @@ build-06: cleanup
     west build -p always -b rpi_pico applications/06_mutex -- \
         -DDTC_OVERLAY_FILE=$PWD/applications/06_mutex/boards/app.overlay
 
+# build example 7
+build-07: cleanup
+    west build -p always -b rpi_pico applications/07_time_sensitive_multi_threading -- \
+        -DDTC_OVERLAY_FILE=$PWD/applications/07_time_sensitive_multi_threading/boards/app.overlay
+
+build-08: cleanup
+    west build -p always -b rpi_pico applications/08_usb_keyboard -- \
+        -DDTC_OVERLAY_FILE=$PWD/applications/08_usb_keyboard/boards/app.overlay
+
 cleanup:
     rm -rf build
 

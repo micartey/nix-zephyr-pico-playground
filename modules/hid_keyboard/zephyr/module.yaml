@@ -1,0 +1,4 @@
+name: hid_keyboard
+build:
+  cmake: .
+  kconfig: Kconfig

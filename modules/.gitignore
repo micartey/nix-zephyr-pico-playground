@@ -4,3 +4,6 @@
 
 !button
 !button/**
+
+!hid_keyboard
+!hid_keyboard/**

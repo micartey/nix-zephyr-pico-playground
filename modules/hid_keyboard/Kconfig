@@ -1,0 +1,6 @@
+config HID_KEYBOARD
+    bool "hid keyboard interface"
+    default y
+    depends on USBD_HID_SUPPORT
+    help
+      Registers the device as a keyboard
