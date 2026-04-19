@@ -29,6 +29,15 @@ struct hid_keyboard_led_state {
 int hid_keyboard_send_key(uint8_t key);
 
 /**
+ * @brief Send a single keystroke with modifier
+ *
+ * @param key HID keycode (use constants from hid_keycodes.h, e.g., HID_KEY_A)
+ * @param modifier HID modifier byte (use constants from hid_keycodes.h, e.g., HID_MOD_LSHIFT)
+ * @return 0 on success, negative error code on failure
+ */
+int hid_keyboard_send_key_with_mod(uint8_t key, uint8_t modifier);
+
+/**
  * @brief Check if keyboard is connected to host
  *
  * @return true if connected and ready

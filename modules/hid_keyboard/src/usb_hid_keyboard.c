@@ -96,13 +96,20 @@ static struct hid_device_ops kb_ops = {
 /* Public API */
 int hid_keyboard_send_key(uint8_t key)
 {
+    return hid_keyboard_send_key_with_mod(key, 0);
+}
+
+int hid_keyboard_send_key_with_mod(uint8_t key, uint8_t modifier)
+{
     uint8_t report[8] = {0};
 
     if (!kb_state.ready) {
         return -ENODEV;
     }
 
+    report[0] = modifier;
     report[2] = key;
+
     hid_device_submit_report(hid_dev, sizeof(report), report);
     k_msleep(10);
 

@@ -29,8 +29,20 @@ int main(void)
         key_count++;
 
         printk("[APP] Sending key #%d...\n", key_count);
-        int ret = hid_keyboard_send_key(HID_KEY_A);
+        int ret = hid_keyboard_send_key(HID_SCAN_AE_UPPER);
         printk("[APP] result=%d, connected=%d\n", ret, hid_keyboard_is_connected());
+
+        k_sleep(K_MSEC(100));
+
+
+
+        printk("[APP] Sending key #%d...\n", key_count);
+        ret = hid_keyboard_send_key_with_mod(HID_SCAN_AE_LOWER, HID_MOD_LSHIFT);
+        printk("[APP] result=%d, connected=%d\n", ret, hid_keyboard_is_connected());
+
+        // printk("[APP] Sending key #%d...\n", key_count);
+        // ret = hid_keyboard_send_key_with_mod(HID_KEY_A, HID_MOD_LSHIFT);
+        // printk("[APP] result=%d, connected=%d\n", ret, hid_keyboard_is_connected());
     }
 
     (void)cmd_bootloader;

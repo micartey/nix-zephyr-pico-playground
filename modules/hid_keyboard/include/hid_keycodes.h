@@ -139,36 +139,33 @@ extern "C" {
 // Common QWERTZ symbols and their HID equivalents:
 // German keyboard layout uses these scan codes:
 // - Ä: Apostrophe (0x34) with Shift
-// - Ö: Semicolon (0x33) with Shift  
+// - Ö: Semicolon (0x33) with Shift
 // - Ü: Left bracket (0x2F) with Shift
 // - ß: Minus (0x2D)
 // - §: 3 (0x20) with AltGr (Right Alt)
 // - €: E (0x08) with AltGr
 // - µ: M (0x10) with AltGr
 // - ^: Grave (0x35) - dead key
-// - ` grave accent (0x35) - dead key
+// - `: Grave accent (0x35) - dead key
 // - ´: Equal (0x2E) - dead key
 // - <>: 102nd key (0x64)
 
 // Helper macros for QWERTZ special characters
 // These work with German (de-DE) keyboard layout on the host
 
-// Umlauts (Ä, Ö, Ü, ä, ö, ü)
-#define HID_SCAN_AE_UPPER   HID_KEY_APOSTROPHE  // Ä
-#define HID_SCAN_OE_UPPER   HID_KEY_SEMICOLON   // Ö
-#define HID_SCAN_UE_UPPER   HID_KEY_LEFTBRACE   // Ü
-#define HID_SCAN_AE_LOWER   HID_KEY_APOSTROPHE  // ä
-#define HID_SCAN_OE_LOWER   HID_KEY_SEMICOLON   // ö
-#define HID_SCAN_UE_LOWER   HID_KEY_LEFTBRACE   // ü
+// Umlauts (ä, ö, ü)
+#define HID_SCAN_AE   HID_KEY_APOSTROPHE  // ä
+#define HID_SCAN_OE   HID_KEY_SEMICOLON   // ö
+#define HID_SCAN_UE   HID_KEY_LEFTBRACE   // ü
 
 // Other German characters
-#define HID_SCAN_SZ         HID_KEY_MINUS       // ß
-#define HID_SCAN_DEGREE     HID_KEY_DOT         // ° (with Shift)
-#define HID_SCAN_CIRCUMFLEX HID_KEY_GRAVE       // ^ (dead key)
-#define HID_SCAN_ACUTE      HID_KEY_EQUAL       // ´ (dead key)
-#define HID_SCAN_LESS_THAN  HID_KEY_102ND       // <
-#define HID_SCAN_GREATER_THAN HID_KEY_102ND     // > (with Shift)
-#define HID_SCAN_PIPE       HID_KEY_102ND       // | (with AltGr)
+#define HID_SCAN_SZ             HID_KEY_MINUS       // ß
+#define HID_SCAN_DEGREE         HID_KEY_DOT         // ° (with Shift)
+#define HID_SCAN_CIRCUMFLEX     HID_KEY_GRAVE       // ^ (dead key)
+#define HID_SCAN_ACUTE          HID_KEY_EQUAL       // ´ (dead key)
+#define HID_SCAN_LESS_THAN      HID_KEY_102ND       // <
+#define HID_SCAN_GREATER_THAN   HID_KEY_102ND       // > (with Shift)
+#define HID_SCAN_PIPE           HID_KEY_102ND       // | (with AltGr)
 
 // Helper function to create HID report
 struct hid_key_report {
